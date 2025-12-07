@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Global Heart Equity Institute</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ghei-navy:#0a2342; --ghei-red:#d7263d; --ghei-gray:#f4f4f4; }
+    html { scroll-behavior:smooth; }
+    body { font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:#0f172a; }
+    .text-ghei{color:var(--ghei-navy);} .bg-ghei{background-color:var(--ghei-navy);}
+    .nav-item{position:relative;}
+    .nav-dropdown{display:none;position:absolute;top:100%;left:0;min-width:220px;background:#fff;border-radius:.75rem;box-shadow:0 10px 30px rgba(15,23,42,.12);padding:.5rem 0;z-index:40;}
+    .nav-item:hover .nav-dropdown{display:block;}
+    .container-1200{max-width:1200px;margin:0 auto;padding:0 1.25rem;}
+  </style>
+</head>
+<body class="bg-white antialiased">
+
+<header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="container-1200 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="https://raw.githubusercontent.com/irenejieunpark/https-gheinstitute.github.io/main/ghei-logo.png"
+           alt="GHEI Logo" class="h-9 w-auto" />
+    </a>
+    <nav class="hidden md:block">
+      <ul class="flex items-center gap-6 text-sm text-slate-700">
+        <li><a href="index.html" class="hover:text-ghei">Home</a></li>
+        <li><a href="about.html" class="hover:text-ghei font-medium">About</a></li>
+        <li><a href="research.html" class="hover:text-ghei">Research</a></li>
+        <li class="nav-item">
+          <button class="flex items-center gap-1 hover:text-ghei">
+            Programs <span class="text-xs">▼</span>
+          </button>
+          <div class="nav-dropdown text-sm text-slate-700">
+            <a href="programs.html#access" class="block px-4 py-2 hover:bg-slate-50">Cardiovascular Access</a>
+            <a href="programs.html#literacy" class="block px-4 py-2 hover:bg-slate-50">Health Literacy</a>
+            <a href="programs.html#open" class="block px-4 py-2 hover:bg-slate-50">Open Science</a>
+            <a href="programs.html#pilot" class="block px-4 py-2 hover:bg-slate-50">Multi-country Pilot</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <button class="flex items-center gap-1 hover:text-ghei">
+            Leadership <span class="text-xs">▼</span>
+          </button>
+          <div class="nav-dropdown text-sm text-slate-700">
+            <a href="leadership.html#director" class="block px-4 py-2 hover:bg-slate-50">Representative</a>
+            <a href="leadership.html#advisors" class="block px-4 py-2 hover:bg-slate-50">Advisors</a>
+            <a href="leadership.html#org" class="block px-4 py-2 hover:bg-slate-50">Organization Structure</a>
+          </div>
+        </li>
+        <li><a href="contact.html" class="hover:text-ghei">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="border-b border-slate-200">
+    <div class="container-1200 py-16 lg:py-20">
+      <h1 class="text-3xl sm:text-4xl font-semibold text-ghei mb-4">About GHEI</h1>
+      <p class="text-sm sm:text-base text-slate-600 max-w-3xl">
+        Global Heart Equity Institute (GHEI) is a global, independent institute focused on
+        reducing inequities in cardiovascular health. GHEI works at the intersection of
+        cardiology, digital health, and public health, with a special emphasis on low-resource
+        settings where access to early detection and prevention remains limited.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-ghei-gray/40">
+    <div class="container-1200 py-14 grid md:grid-cols-2 gap-10 text-sm">
+      <div>
+        <h2 class="text-xl font-semibold text-ghei mb-3">Mission</h2>
+        <p class="text-slate-600">
+          To improve global cardiovascular health equity through accessible mobile technology,
+          rigorous scientific research, and community-centered education.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold text-ghei mb-3">Vision</h2>
+        <p class="text-slate-600">
+          A world where every person—regardless of geography, income, or literacy—has equitable
+          access to early detection, prevention, and high-quality information about heart health.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200">
+    <div class="container-1200 py-14 grid md:grid-cols-2 gap-10 text-sm">
+      <div>
+        <h2 class="text-xl font-semibold text-ghei mb-3">Why GHEI was founded</h2>
+        <p class="text-slate-600 mb-3">
+          Cardiovascular disease remains the leading cause of death worldwide, but access to
+          early detection and preventive care is extremely uneven. Many communities lack even
+          basic screening tools, and emerging digital health innovations often reach only the
+          most connected and resourced populations.
+        </p>
+        <p class="text-slate-600">
+          GHEI was founded to ensure that advances in cardiovascular screening, mobile
+          technology, and AI modeling do not widen disparities—but instead are used to close them.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold text-ghei mb-3">How GHEI works</h2>
+        <ul class="list-disc list-inside text-slate-600 space-y-2">
+          <li>Designing and evaluating mobile PPG and AI-based cardiovascular screening tools.</li>
+          <li>Building collaborations with clinicians and researchers in low-resource settings.</li>
+          <li>Developing accessible educational materials for patients and communities.</li>
+          <li>Sharing data, methods, and findings publicly whenever feasible.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-black text-slate-400 text-xs py-4">
+  <div class="container-1200 flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between">
+    <p>© <span id="year"></span> Global Heart Equity Institute.</p>
+    <p>Advancing cardiovascular equity for every community.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
