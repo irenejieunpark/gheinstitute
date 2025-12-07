@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research – Global Heart Equity Institute</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --ghei-navy:#0a2342; --ghei-red:#d7263d; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter; color:#0f172a; }
+    .text-ghei { color: var(--ghei-navy); }
+    .nav-item { position:relative; }
+    .nav-dropdown {
+      display:none; position:absolute; top:100%; left:0;
+      min-width:220px; background:white; border-radius:.75rem;
+      box-shadow:0 10px 30px rgba(15,23,42,.12); padding:.5rem 0; 
+    }
+    .nav-item:hover .nav-dropdown { display:block; }
+    .container-1200 { max-width:1200px; margin:0 auto; padding:0 1.25rem; }
+  </style>
+</head>
+
+<body class="bg-white">
+
+<!-- NAVBAR (복붙 동일) -->
+<header class="sticky top-0 bg-white/90 backdrop-blur border-b border-slate-200 z-30">
+  <div class="container-1200 h-16 flex items-center justify-between">
+    <a href="index.html"><img src="https://raw.githubusercontent.com/irenejieunpark/https-gheinstitute.github.io/main/ghei-logo.png" class="h-9"></a>
+
+    <nav class="hidden md:block">
+      <ul class="flex items-center gap-6 text-sm text-slate-700">
+        <li><a href="index.html" class="hover:text-ghei">Home</a></li>
+        <li><a href="about.html" class="hover:text-ghei">About</a></li>
+        <li><a href="research.html" class="hover:text-ghei font-medium">Research</a></li>
+
+        <li class="nav-item">
+          <button class="hover:text-ghei">Programs ▼</button>
+          <div class="nav-dropdown">
+            <a href="programs.html#access" class="block px-4 py-2 hover:bg-slate-50">Cardiovascular Access</a>
+            <a href="programs.html#literacy" class="block px-4 py-2 hover:bg-slate-50">Health Literacy</a>
+            <a href="programs.html#open" class="block px-4 py-2 hover:bg-slate-50">Open Science</a>
+            <a href="programs.html#pilot" class="block px-4 py-2 hover:bg-slate-50">Multi-country Pilot</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <button class="hover:text-ghei">Leadership ▼</button>
+          <div class="nav-dropdown">
+            <a href="leadership.html#director" class="block px-4 py-2 hover:bg-slate-50">Representative</a>
+            <a href="leadership.html#advisors" class="block px-4 py-2 hover:bg-slate-50">Advisors</a>
+            <a href="leadership.html#org" class="block px-4 py-2 hover:bg-slate-50">Organization Structure</a>
+          </div>
+        </li>
+
+        <li><a href="contact.html" class="hover:text-ghei">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN -->
+<section class="border-b border-slate-200">
+  <div class="container-1200 py-16 lg:py-20">
+    <h1 class="text-3xl font-semibold text-ghei mb-4">Scientific Foundation</h1>
+    <p class="text-slate-600 max-w-3xl text-sm sm:text-base">
+      GHEI’s research is grounded in cardiovascular epidemiology, digital biometrics,
+      and population-based modeling. Our foundational scientific work includes
+      smartphone-based PPG analysis, metabolic predictors of cardiovascular disease,
+      and risk modeling validated across diverse populations.
+    </p>
+  </div>
+</section>
+
+<section class="container-1200 py-16 grid md:grid-cols-3 gap-6">
+  <div class="p-5 border rounded-xl shadow-sm bg-white">
+    <h3 class="text-ghei font-semibold mb-2">Digital Biometrics</h3>
+    <p class="text-slate-600 text-sm">
+      Research on smartphone PPG signals, HRV metrics, vascular aging markers (ePWV),
+      and cardiometabolic indicators including WWI and FLI.
+    </p>
+  </div>
+
+  <div class="p-5 border rounded-xl shadow-sm bg-white">
+    <h3 class="text-ghei font-semibold mb-2">Population Modeling</h3>
+    <p class="text-slate-600 text-sm">
+      Experience analyzing 26,000+ NHANES samples, CVD mortality prediction,
+      and Life’s Essential 8 statistical modeling.
+    </p>
+  </div>
+
+  <div class="p-5 border rounded-xl shadow-sm bg-white">
+    <h3 class="text-ghei font-semibold mb-2">Institutional Background</h3>
+    <p class="text-slate-600 text-sm">
+      Collaborative research roots include Shanghai Chest Hospital and Shanghai
+      Jiao Tong University School of Medicine cardiometabolic research groups.
+    </p>
+  </div>
+</section>
+
+<footer class="bg-black text-slate-400 text-xs py-4">
+  <div class="container-1200 flex justify-between">
+    <p>© <span id="year"></span> GHEI.</p>
+    <p>Advancing cardiovas
