@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact – GHEI</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{--ghei-navy:#0a2342;}
+  body{font-family:Inter;}
+  .text-ghei{color:var(--ghei-navy);}
+  .nav-item{position:relative;}
+  .nav-dropdown{
+    display:none;position:absolute;top:100%;left:0;background:white;
+    min-width:220px;border-radius:.75rem;box-shadow:0 10px 30px rgba(15,23,42,.12);
+  }
+  .nav-item:hover .nav-dropdown{display:block;}
+  .container-1200{max-width:1200px;margin:auto;padding:0 1.25rem;}
+</style>
+</head>
+
+<body class="bg-white">
+
+<header class="sticky top-0 bg-white/90 backdrop-blur border-b border-slate-200 z-30">
+  <div class="container-1200 h-16 flex items-center justify-between">
+    <a href="index.html"><img src="https://raw.githubusercontent.com/irenejieunpark/https-gheinstitute.github.io/main/ghei-logo.png" class="h-9"></a>
+    <nav class="hidden md:block">
+      <ul class="flex gap-6 text-sm">
+        <li><a href="index.html" class="hover:text-ghei">Home</a></li>
+        <li><a href="about.html" class="hover:text-ghei">About</a></li>
+        <li><a href="research.html" class="hover:text-ghei">Research</a></li>
+
+        <li class="nav-item">
+          <button class="hover:text-ghei">Programs ▼</button>
+          <div class="nav-dropdown">
+            <a href="programs.html#access" class="block px-4 py-2 hover:bg-slate-50">Cardiovascular Access</a>
+            <a href="programs.html#literacy" class="block px-4 py-2 hover:bg-slate-50">Health Literacy</a>
+            <a href="programs.html#open" class="block px-4 py-2 hover:bg-slate-50">Open Science</a>
+            <a href="programs.html#pilot" class="block px-4 py-2 hover:bg-slate-50">Multi-country Pilot</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <button class="hover:text-ghei">Leadership ▼</button>
+          <div class="nav-dropdown">
+            <a href="leadership.html#director" class="block px-4 py-2 hover:bg-slate-50">Representative</a>
+            <a href="leadership.html#advisors" class="block px-4 py-2 hover:bg-slate-50">Advisors</a>
+            <a href="leadership.html#org" class="block px-4 py-2 hover:bg-slate-50">Organization Structure</a>
+          </div>
+        </li>
+
+        <li><a href="contact.html" class="hover:text-ghei font-medium">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="container-1200 py-16">
+  <h1 class="text-3xl font-semibold text-ghei mb-4">Contact GHEI</h1>
+  <p class="text-slate-600 text-sm sm:text-base max-w-xl mb-10">
+    For collaboration, research partnerships, or inquiries regarding global cardiovascular
+    health equity, please reach out to us.
+  </p>
+
+  <div class="p-6 border rounded-xl shadow-sm bg-white max-w-xl">
+    <p class="text-sm mb-3">
+      <span class="font-semibold text-ghei">Email:</span>
+      contact@gheinstitute.org
+    </p>
+    <a href="mailto:contact@gheinstitute.org"
+       class="inline-flex items-center px-6 py-3 bg-ghei text-white rounded-full text-sm font-medium hover:opacity-90">
+      Send Email
+    </a>
+  </div>
+</section>
+
+<footer class="bg-black text-slate-400 text-xs py-4">
+  <div class="container-1200 flex justify-between">
+    <p>© <span id="year"></span> GHEI.</p>
+    <p>Advancing cardiovascular equity for every community.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
