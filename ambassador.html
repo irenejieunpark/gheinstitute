@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GHEI Ambassador Starter Kit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --navy: #0D1B2A;
+      --navy-light: #1B263B;
+      --accent: #E0A800;
+      --bg: #F5F7FA;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --card-bg: #FFFFFF;
+      --border: #E5E7EB;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Top nav */
+    header {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: white;
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: #E5E7EB;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 960px;
+      margin: 2rem auto 1rem;
+      padding: 1.5rem;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--navy-light);
+      background: #E5E7EB;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2rem;
+      color: var(--navy);
+    }
+
+    .hero-sub {
+      max-width: 640px;
+      font-size: 0.96rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta span {
+      display: inline-block;
+      margin-right: 0.75rem;
+    }
+
+    /* Layout */
+    main {
+      max-width: 960px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr);
+      gap: 1.5rem;
+    }
+
+    section {
+      background: var(--card-bg);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+    }
+
+    section h2 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.3rem;
+      color: var(--navy);
+    }
+
+    section h3 {
+      margin-top: 1.3rem;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+      color: var(--navy-light);
+    }
+
+    section p {
+      margin: 0.3rem 0;
+      font-size: 0.94rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0.3rem 0 0.5rem;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+      font-size: 0.94rem;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      background: #E5E7EB;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy-light);
+    }
+
+    .code-block {
+      background: #F3F4F6;
+      border-radius: 0.5rem;
+      padding: 0.75rem 0.9rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      font-size: 0.85rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 1.25rem 1rem;
+        margin-top: 1.25rem;
+      }
+      main {
+        padding: 0 1rem 2rem;
+      }
+      section {
+        padding: 1.25rem 1.1rem;
+      }
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="brand">Global Heart Equity Institute</div>
+      <nav class="nav-links">
+        <a href="#orientation">Orientation</a>
+        <a href="#about">About GHEI</a>
+        <a href="#role">Ambassador Role</a>
+        <a href="#welcome">Welcome Message</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="hero-tag">
+      <span>GHEI</span>
+      <span>Ambassador Starter Kit</span>
+    </div>
+    <h1>Global Country Ambassador Starter Kit</h1>
+    <p class="hero-sub">
+      This page provides ready-to-use content for introducing GHEI to potential
+      Ambassadors, explaining the program to external partners, and onboarding
+      selected Ambassadors into the global network.
+    </p>
+    <div class="hero-meta">
+      <span>Use this as internal reference or public-facing content.</span>
+    </div>
+  </div>
+
+  <main>
+    <!-- 1. Orientation -->
+    <section id="orientation">
+      <div class="pill">Document 1</div>
+      <h2>GHEI Ambassador 1-Page Orientation</h2>
+      <p class="muted">
+        You can copy this into Canva, PowerPoint, or Google Docs to create a
+        one-page PDF.
+      </p>
+
+      <h3>Global Heart Equity Institute (GHEI)</h3>
+      <p><strong>Building a global community for equitable heart health</strong></p>
+
+      <h3>What is GHEI?</h3>
+      <p>
+        The Global Heart Equity Institute (GHEI) is an international organization
+        dedicated to improving cardiovascular health equity through education,
+        community engagement, and collaborative global partnerships. Our vision
+        is a world where heart-health knowledge and resources are accessible
+        regardless of geography, language, or socioeconomic status.
+      </p>
+
+      <h3>Why We Do This</h3>
+      <p>
+        Cardiovascular disease is the leading cause of death worldwide — yet
+        largely preventable. Disparities in knowledge, access, and prevention
+        leave many communities behind. GHEI aims to close these gaps through
+        culturally grounded communication and global collaboration.
+      </p>
+
+      <h3>Our Core Focus Areas</h3>
+      <p><strong>1. Health Literacy &amp; Education</strong><br />
+        Culturally tailored heart-health materials, awareness activities, youth
+        engagement.</p>
+
+      <p><strong>2. Community &amp; Country-Based Engagement</strong><br />
+        Supporting local initiatives, organizing workshops, understanding
+        regional needs.</p>
+
+      <p><strong>3. Global Collaboration Network</strong><br />
+        Linking universities, hospitals, NGOs, and individuals across
+        countries.</p>
+
+      <p><strong>4. Small-Scale Research &amp; Pilot Projects</strong><br />
+        Needs assessments, surveys, feasibility studies (PPG-related pilots
+        included later).</p>
+
+      <h3>About the Ambassador Program</h3>
+      <p>
+        GHEI Global Ambassadors represent their region and help:
+      </p>
+      <ul>
+        <li>Identify local heart-health needs</li>
+        <li>Support small-scale projects and surveys</li>
+        <li>Share cultural and linguistic insights</li>
+        <li>Facilitate partner connections</li>
+        <li>Join global discussions and initiatives</li>
+      </ul>
+      <p>
+        Ambassadors are recognized contributors to GHEI’s global mission.
+      </p>
+
+      <h3>What Ambassadors Receive</h3>
+      <ul>
+        <li>Official GHEI Global Ambassador Certificate</li>
+        <li>Participation acknowledgment</li>
+        <li>Listing on the GHEI website</li>
+        <li>Opportunity to join future global projects</li>
+        <li>Possibility of research involvement and acknowledgments</li>
+      </ul>
+    </section>
+
+    <!-- 2. About GHEI -->
+    <section id="about">
+      <div class="pill">Document 2</div>
+      <h2>About GHEI – Short Brochure Text</h2>
+      <p class="muted">
+        This is suitable for your website "About" section or a short institutional overview.
+      </p>
+
+      <h3>About GHEI – Global Heart Equity Institute</h3>
+
+      <p><strong>Mission</strong><br />
+        To advance cardiovascular health equity through education, collaboration,
+        cultural understanding, and global partnership building.
+      </p>
+
+      <h3>What We Do</h3>
+      <ul>
+        <li>Create accessible health literacy materials</li>
+        <li>Support community-based heart-health initiatives</li>
+        <li>Bring together leaders from multiple countries</li>
+        <li>Conduct small-scale assessments and pilot studies</li>
+        <li>Promote cross-country knowledge sharing</li>
+        <li>Build sustainable global partnerships</li>
+      </ul>
+
+      <h3>Who We Work With</h3>
+      <p>
+        Universities, hospitals, NGOs, student groups, community leaders,
+        clinicians, and young global health advocates.
+      </p>
+
+      <p><strong>Our Principle</strong><br />
+        <em>Heart health belongs to everyone.</em>
+      </p>
+    </section>
+
+    <!-- 3. Role Description -->
+    <section id="role">
+      <div class="pill">Document 3</div>
+      <h2>GHEI Global Country Ambassador – Role Description</h2>
+      <p class="muted">
+        You can also reuse this in job posts, LinkedIn role descriptions, or internal documentation.
+      </p>
+
+      <h3>Position Type</h3>
+      <p>
+        Non-paid, flexible, international partnership role.
+      </p>
+
+      <h3>Purpose</h3>
+      <p>
+        To serve as a representative for your country/region within the GHEI
+        global network, helping identify local needs, connect partners, and
+        support community and collaborative activities.
+      </p>
+
+      <h3>Key Responsibilities</h3>
+
+      <p><strong>1. Local Insight &amp; Needs Identification</strong></p>
+      <ul>
+        <li>Share perspectives on cardiovascular health challenges in your region</li>
+        <li>Support needs assessments or small-scale surveys when applicable</li>
+      </ul>
+
+      <p><strong>2. Community &amp; Engagement Support</strong></p>
+      <ul>
+        <li>Help localize and share health education content</li>
+        <li>Participate in or organize small-scale awareness activities</li>
+      </ul>
+
+      <p><strong>3. Partnership Facilitation</strong></p>
+      <ul>
+        <li>Connect GHEI with potential collaborators (universities, hospitals, NGOs)</li>
+        <li>Provide cultural or linguistic context for cross-country collaboration</li>
+      </ul>
+
+      <p><strong>4. Optional Research Involvement</strong></p>
+      <ul>
+        <li>Join pilot projects or data collection activities</li>
+        <li>Contribute to country-level feasibility assessments</li>
+      </ul>
+
+      <p><strong>5. Global Network Participation</strong></p>
+      <ul>
+        <li>Join virtual meetings and workshops</li>
+        <li>Share updates or insights with the global team</li>
+      </ul>
+
+      <h3>Time Commitment</h3>
+      <p>
+        Flexible, typically 1–3 hours per week depending on activities.
+      </p>
+
+      <h3>Benefits for Ambassadors</h3>
+      <ul>
+        <li>Official GHEI Ambassador Certificate</li>
+        <li>Recognition on the GHEI website</li>
+        <li>Priority access to global projects and workshops</li>
+        <li>Opportunity for acknowledgment in reports and publications</li>
+        <li>Experience in international public health collaboration</li>
+      </ul>
+    </section>
+
+    <!-- 4. Welcome Message -->
+    <section id="welcome">
+      <div class="pill">Document 4</div>
+      <h2>Ambassador Onboarding – Welcome Message</h2>
+      <p class="muted">
+        Use this in email, WeChat, WhatsApp, or any messaging platform when you accept a new Ambassador.
+      </p>
+
+      <h3>Welcome Message (Copy &amp; Paste)</h3>
+      <div class="code-block">
+Hello, and welcome to the Global Heart Equity Institute (GHEI)!
+We are delighted to have you join our global network as a Country Ambassador.
+
+GHEI is a collaborative international initiative working to improve cardiovascular health equity through education, community engagement, and global partnerships. As an Ambassador, your insights and perspectives from your region are incredibly valuable.
+
+Your role includes:
+• Representing your country/region within our global network
+• Sharing local health needs or cultural considerations
+• Connecting potential partners (universities, hospitals, NGOs, student groups)
+• Supporting small-scale surveys or community-based projects
+• Participating in global workshops and discussions
+
+This role is flexible — you may contribute according to your availability.
+
+Next Steps:
+1. We will add you to the GHEI Ambassador group chat
+2. You will receive your official certificate
+3. We will share upcoming opportunities, projects, and orientation materials
+
+If you have any questions or ideas, feel free to message anytime.
+We are very excited to collaborate with you!
+
+Warm regards,
+GHEI Team
+      </div>
+
+      <p class="muted" style="margin-top:0.75rem;">
+        You can localize this message into Korean, Chinese, or other languages as needed, while keeping the same structure.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
